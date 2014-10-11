@@ -35,7 +35,8 @@ function *create(){
   var note = yield parseBody(this);
   note.create_at = new Date;
   note.update_at = new Date;
-  notes.push(note);
+  var id = notes.push(note);
+  note.id = id;
   this.redirect('/')
 }
 // Start the server

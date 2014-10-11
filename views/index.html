@@ -6,6 +6,16 @@
     <button><a href="/note/new">Create one Note</a></button>
   {% else %}
     <p>You have {{ notes.length }} notes. Here is the list</p>
-    <button><a href="">Create more Notes</a></button>
+    <button><a href="/note/new">Create more Notes</a></button>
+    <ul>
+      {% for note in notes %}
+        <li>
+          <strong> {{ note.title }}</strong> | 
+          <a href="/note/{{ note.id }}"> Details </a> | 
+          <a href="/note/edit/{{ note.id }}">Edit</a> | 
+          <a href="/note/delete/{{ note.id }}">Delete</a>
+        </li>
+      {% endfor %}
+    </ul>
   {% endif %}
 {% endblock %}
