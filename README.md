@@ -6,7 +6,7 @@ CRUD Note App built using:-
 * [Koa](http://koajs.com/)
 * [Swig](http://paularmstrong.github.io/swig/)
 
-CRUD Routes:-
+#####CRUD Routes:-
 ---
 ```
 HTTP Verb         Path                Used For
@@ -18,4 +18,12 @@ POST              /note/create        create a new note
 GET               /note/edit/:id      return html form for editing note
 POST              /note/update        update a specific note 
 GET               /note/delete/       delete a specific note
+```
+#### Instructions
+
+```
+~> git clone git@github.com:dahal/Notable.git
+~> cd Notable
+~> npm install
+~> node server.js
 ```
