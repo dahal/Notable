@@ -4,7 +4,8 @@ var koa         = require('koa'),
     views       = require('co-views'),
     parseBody   = require('co-body'),
     logs        = require('koa-logger'),
-    app         = koa()
+    app         = koa(),
+    Faker       = require('Faker')
 
 // Render some logs on terminal
 app.use(logs())
@@ -23,6 +24,25 @@ var render = views(__dirname + '/views', {map: {html: 'swig'}})
 
 // Initialixe notes
 var notes = new Array
+
+// Fake Some Fake data for test
+for(var i = 1; i <= 10; i++){
+  var id        = i;
+  var title     = Faker.Lorem.sentence();
+  var desc      = Faker.Lorem.paragraph();
+  var created   = Faker.Date.past();
+  var updated  = new Date;
+  var note = {
+    'title': title,
+    'description': desc,
+    'created_at': created,
+    'updated_at': updated,
+    'id': id
+  }
+  notes.push(note)
+}
+
+
 
 // Index
 function *all(){
@@ -44,8 +64,8 @@ function *show(id){
 // Create
 function *create(){
   var note = yield parseBody(this);
-  note.create_at = new Date;
-  note.update_at = new Date;
+  note.created_at = new Date;
+  note.updated_at = new Date;
   var id = notes.push(note);
   note.id = id;
   this.redirect('/')
@@ -64,7 +84,7 @@ function *update(){
   var id = note.id - 1;
   notes[id].title = note.title
   notes[id].description = note.description
-  notes[id].update_at = new Date;
+  notes[id].updated_at = new Date;
   this.redirect('/')
 }
 
