@@ -1,0 +1,75 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.0.0
+3 info using node@v0.11.14
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/Puru/Developer/Javascript/Node/Notable',
+5 verbose install   [ 'koa', 'koa-route', 'swig', 'co-views', 'co-body' ] ]
+6 info preinstall Notable@0.0.1
+7 verbose readDependencies using package.json deps
+8 verbose already installed skipping koa@0.12.2 /Users/Puru/Developer/Javascript/Node/Notable
+9 verbose already installed skipping koa-route@2.1.0 /Users/Puru/Developer/Javascript/Node/Notable
+10 verbose already installed skipping swig@1.4.2 /Users/Puru/Developer/Javascript/Node/Notable
+11 verbose already installed skipping co-views@0.2.0 /Users/Puru/Developer/Javascript/Node/Notable
+12 verbose cache add [ 'co-body@0.12.2', null ]
+13 verbose cache add spec="co-body@0.12.2" args=["co-body@0.12.2",null]
+14 verbose parsed spec { raw: 'co-body@0.12.2',
+14 verbose parsed spec   scope: null,
+14 verbose parsed spec   name: 'co-body',
+14 verbose parsed spec   rawSpec: '0.12.2',
+14 verbose parsed spec   spec: '0.12.2',
+14 verbose parsed spec   type: 'version' }
+15 verbose parsed spec { raw: 'co-body@0.12.2',
+15 verbose parsed spec   scope: null,
+15 verbose parsed spec   name: 'co-body',
+15 verbose parsed spec   rawSpec: '0.12.2',
+15 verbose parsed spec   spec: '0.12.2',
+15 verbose parsed spec   type: 'version' }
+16 verbose addNamed [ 'co-body', '0.12.2' ]
+17 verbose addNamed [ '0.12.2', '0.12.2' ]
+18 silly lockFile 4d233e15-co-body-0-12-2 co-body@0.12.2
+19 verbose lock co-body@0.12.2 /Users/Puru/.npm/4d233e15-co-body-0-12-2.lock
+20 verbose mapToRegistry name co-body
+21 verbose mapToRegistry uri https://registry.npmjs.org/co-body
+22 verbose request on initialization, where is /co-body
+23 verbose request after pass 1, where is /co-body
+24 verbose request url raw /co-body
+25 verbose request resolving registry [ 'https://registry.npmjs.org/', './co-body' ]
+26 verbose request after pass 2, where is https://registry.npmjs.org/co-body
+27 verbose request no auth needed
+28 info attempt registry request try #1 at 18:25:22
+29 verbose request id 5033dc1c8b94bfa7
+30 http request GET https://registry.npmjs.org/co-body
+31 http 200 https://registry.npmjs.org/co-body
+32 silly registry.get cb [ 200,
+32 silly registry.get   { date: 'Sat, 11 Oct 2014 01:27:25 GMT',
+32 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+32 silly registry.get     etag: '"746749AT8NEVAQQ0KDMGLJLH"',
+32 silly registry.get     'content-type': 'application/json',
+32 silly registry.get     'cache-control': 'max-age=60',
+32 silly registry.get     'content-length': '4654',
+32 silly registry.get     'accept-ranges': 'bytes',
+32 silly registry.get     via: '1.1 varnish',
+32 silly registry.get     age: '527',
+32 silly registry.get     'x-served-by': 'cache-lax1422-LAX',
+32 silly registry.get     'x-cache': 'MISS',
+32 silly registry.get     'x-cache-hits': '0',
+32 silly registry.get     'x-timer': 'S1412990844.998388,VS0,VE305',
+32 silly registry.get     vary: 'Accept',
+32 silly registry.get     connection: 'close' } ]
+33 silly lockFile 4d233e15-co-body-0-12-2 co-body@0.12.2
+34 silly lockFile 4d233e15-co-body-0-12-2 co-body@0.12.2
+35 verbose stack Error: version not found: co-body@0.12.2
+35 verbose stack     at setData (/usr/local/lib/node_modules/npm/lib/cache/add-named.js:127:12)
+35 verbose stack     at saved (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:167:7)
+35 verbose stack     at Object.oncomplete (fs.js:93:15)
+36 verbose statusCode 404
+37 verbose cwd /Users/Puru/Developer/Javascript/Node/Notable
+38 error Darwin 13.3.0
+39 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+40 error node v0.11.14
+41 error npm  v2.0.0
+42 error version not found: co-body@0.12.2
+43 error If you need help, you may report this error at:
+43 error     <http://github.com/npm/npm/issues>
+44 verbose exit [ 1, true ]
