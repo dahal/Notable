@@ -1,9 +1,13 @@
 // Require dependencies
-var koa   = require('koa'),
-    route = require('koa-route'),
-    app   = koa(),
-    views = require('co-views'),
-    parseBody = require('co-body')
+var koa         = require('koa'),
+    route       = require('koa-route'),
+    views       = require('co-views'),
+    parseBody   = require('co-body'),
+    logs        = require('koa-logger'),
+    app         = koa()
+
+// Render some logs on terminal
+app.use(logs())
 
 // Define the routes
 app.use(route.get('/', all));
