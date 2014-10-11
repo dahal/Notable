@@ -13,7 +13,7 @@ app.use(logs())
 app.use(route.get('/', all));
 app.use(route.get('/note/new', add));
 app.use(route.get('/note/:id', show));
-// app.use(route.get('/note/delete/:id', remote));
+app.use(route.get('/note/delete/:id', remove));
 app.use(route.get('/note/edit/:id', edit));
 app.use(route.post('/note/create', create));
 app.use(route.post('/note/update', update))
@@ -65,6 +65,15 @@ function *update(){
   notes[id].update_at = new Date;
   this.redirect('/')
 }
+
+// Delete
+function *remove(id){
+  var note = notes[id-1]
+  var id = note.id
+  notes.splice(id, 1)
+  this.redirect('/')
+}
+
 // Start the server
 app.listen(8080);
 console.log('Notable loading on: http://localhost:8080')
