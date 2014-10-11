@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h2>Edit Note</h2>
+  <form action='/note/update' method = 'post'>
+    <input type="hidden", value="{{ note.id }}" name="id">
+    <p>Title: <input value="{{ note.title }}" name = "title"> </p>
+    <p>Description: <textarea name = "description">{{ note.description }}</textarea></p>
+    <p><input type="submit" value="Update"></p>
+  </form>
+{% endblock %}
