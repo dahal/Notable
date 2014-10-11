@@ -72,8 +72,14 @@ function *update(){
 function *remove(id){
   var note = notes[id-1]
   if (!note) this.throw(404, 'Houston, we have a problem, perhaps the id is incorrect!')
-  var id = note.id
-  notes.splice(id, 1)
+  var idx = note.id
+  notes.splice(idx, 1)
+
+  //Change the ID of existing notes
+  for(var i = 0; i < notes.length; i++){
+    notes[i].id = i+1
+  }
+
   this.redirect('/')
 }
 
