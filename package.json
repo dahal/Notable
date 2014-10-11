@@ -7,7 +7,8 @@
   "dependencies": {
     "koa": "0.12.2",
     "koa-route": "2.1.0",
-    "swig": "1.4.2"
+    "swig": "1.4.2",
+    "co-views": "0.2.0"
 
   },
   "engines": {
