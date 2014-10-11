@@ -12,7 +12,7 @@ app.use(logs())
 // Define the routes
 app.use(route.get('/', all));
 app.use(route.get('/note/new', add));
-// app.use(route.get('/note/:id', show));
+app.use(route.get('/note/:id', show));
 // app.use(route.get('/note/delete/:id', remote));
 app.use(route.get('/note/edit/:id', edit));
 app.use(route.post('/note/create', create));
@@ -32,6 +32,12 @@ function *all(){
 // New
 function *add(){
   this.body = yield render('new')
+}
+
+//Show
+function *show(id){
+  var note = notes[id-1]
+  this.body = yield render('show', {note: note})
 }
 
 // Create
