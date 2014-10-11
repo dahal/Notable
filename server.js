@@ -19,7 +19,7 @@ app.use(route.get('/note/edit/:id', edit));
 app.use(route.post('/note/create', create));
 app.use(route.post('/note/update', update))
 
-// Spicify views folder and swig for template
+// Specify views folder and swig for template
 var render = views(__dirname + '/views', {map: {html: 'swig'}})
 
 // Initialixe notes
