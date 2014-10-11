@@ -37,6 +37,7 @@ function *add(){
 //Show
 function *show(id){
   var note = notes[id-1]
+  if (!note) this.throw(404, 'Houston, we have a problem, perhaps the id is incorrect!')
   this.body = yield render('show', {note: note})
 }
 
@@ -53,6 +54,7 @@ function *create(){
 // Edit
 function *edit(id){
   var note = notes[id-1];
+  if (!note) this.throw(404, 'Houston, we have a problem, perhaps the id is incorrect!')
   this.body = yield render('edit', {note: note});
 }
 
@@ -69,6 +71,7 @@ function *update(){
 // Delete
 function *remove(id){
   var note = notes[id-1]
+  if (!note) this.throw(404, 'Houston, we have a problem, perhaps the id is incorrect!')
   var id = note.id
   notes.splice(id, 1)
   this.redirect('/')
