@@ -16,7 +16,7 @@ app.use(route.get('/note/new', add));
 // app.use(route.get('/note/delete/:id', remote));
 app.use(route.get('/note/edit/:id', edit));
 app.use(route.post('/note/create', create));
-// app.use(route.post('/todo/update', update))
+app.use(route.post('/note/update', update))
 
 // Spicify views folder and swig for template
 var render = views(__dirname + '/views', {map: {html: 'swig'}})
@@ -41,15 +41,23 @@ function *create(){
   note.update_at = new Date;
   var id = notes.push(note);
   note.id = id;
-  console.log(notes)
   this.redirect('/')
 }
 
 // Edit
 function *edit(id){
   var note = notes[id-1];
-  console.log(note)
   this.body = yield render('edit', {note: note});
+}
+
+// Update
+function *update(){
+  var note = yield parseBody(this);
+  var id = note.id - 1;
+  notes[id].title = note.title
+  notes[id].description = note.description
+  notes[id].update_at = new Date;
+  this.redirect('/')
 }
 // Start the server
 app.listen(8080);
