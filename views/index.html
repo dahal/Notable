@@ -1,1 +1,6 @@
-Notes on index
+{% if notes.length == 0 %}
+  <p>Oh Snap! You dont have any notes. Why done you create one</p>
+  <button><a href="">Create one Note</a></button>
+{% else %}
+  <p>You have {{ notes.length }} notes. Here is the list</p>
+  <button><a href="">Create more Notes</a></button>

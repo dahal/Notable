@@ -16,6 +16,8 @@ app.use(route.get('/', notes));
 // Spicify views folder and swig for template
 var render = views(__dirname + '/views', {map: {html: 'swig'}})
 
+// Initialixe notes
+var notes = new Array
 
 // Index
 function *notes(){
