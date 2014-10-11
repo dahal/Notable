@@ -6,7 +6,7 @@ var koa   = require('koa'),
 
 // Define the routes
 app.use(route.get('/', notes));
-// app.use(route.get('/note/new', add));
+app.use(route.get('/note/new', add));
 // app.use(route.get('/note/:id', show));
 // app.use(route.get('/note/delete/:id', remote));
 // app.use(route.get('/note/edit/:id', edit));
@@ -22,6 +22,11 @@ var notes = new Array
 // Index
 function *notes(){
   this.body = yield render('index', {notes: notes})
+}
+
+// New
+function *add(){
+  this.body = yield render('new')
 }
 // Start the server
 app.listen(8080);

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h2>Lets create new Notes</h2>
+  <form action='/note/create' method = 'post'>
+    <p>Title: <input placeholder = "Title" name = "title"> </p>
+    <p>Description: <textarea placeholder = "Description" name = "description"> </textarea></p>
+    <p><input type="submit" value="Create"></p>
+  </form>
+{% endblock %}
